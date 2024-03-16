@@ -73,7 +73,7 @@ accelerator:
       inputType: checkbox
       label: 'Airflow (Data Preprocessing / ML Training)'
       dependsOn:
-        name: datasource
+        name: dataprocess
         value: true
     - name: airflowAuthUsername
       inputType: text
