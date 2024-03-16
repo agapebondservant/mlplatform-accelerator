@@ -1,0 +1,241 @@
+accelerator:
+  displayName: ML Platform Accelerator
+  description: Wizard for configuring the components of an MLOps platform on TAP
+  iconUrl: https://cdn-icons-png.flaticon.com/512/7364/7364323.png
+  tags:
+    - "ML"
+    - "AI"
+    - "machinelearning"
+    - "datascience"
+    - "MLOps"
+    - "artificialintelligence"
+    - "pipeline"
+    - "GitOps"
+    - "platform"
+  imports:
+    - name: airflow-fragment
+  options:
+    - name: datasource
+      dataType: boolean
+      inputType: checkbox
+      label: 'Data Sources Platform'
+    - name: dataprocess
+      dataType: boolean
+      inputType: checkbox
+      label: 'Data Preprocessing Platform'
+    - name: training
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Training Platform'
+    - name: governance
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Governance Platform'
+    - name: observability
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Observability Platform'
+    - name: serving
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Deployment and Serving Platform'
+    - name: notebook
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Notebook and Experimentation Platform'
+
+    - name: postgres
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Postgres'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: datasource
+        value: true
+    - name: postgresAuthUsername
+      inputType: text
+      display: true
+      label: 'postgresAuth.username'
+      defaultValue: 'pgadmin'
+      dependsOn:
+        name: datasource
+        value: true
+    - name: postgresAuthPassword
+      inputType: text
+      display: true
+      label: 'postgresAuth.password'
+      defaultValue: 'changeme'
+      dependsOn:
+        name: datasource
+        value: true
+
+    - name: airflow
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Airflow'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: dataprocess
+        value: true
+    - name: airflowAuthUsername
+      inputType: text
+      display: true
+      label: 'airflowAuth.username'
+      defaultValue: 'admin'
+      dependsOn:
+        name: dataprocess
+        value: true
+    - name: airflowAuthPassword
+      inputType: text
+      display: true
+      label: 'airflowAuth.password'
+      defaultValue: 'admin'
+      dependsOn:
+        name: dataprocess
+        value: true
+
+    - name: mlflow
+      inputType: radio
+      display: true
+      choices:
+        - text: 'MLflow'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: training
+        value: true
+    - name: mlflowAuthUsername
+      inputType: text
+      display: true
+      label: 'mlflowAuth.username'
+      defaultValue: 'admin'
+      dependsOn:
+        name: training
+        value: true
+    - name: mlflowAuthPassword
+      inputType: text
+      display: true
+      label: 'mlflowAuth.password'
+      defaultValue: 'admin'
+      dependsOn:
+        name: training
+        value: true
+
+    - name: datahub
+      inputType: radio
+      display: true
+      choices:
+        - text: 'DataHub'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: governance
+        value: true
+    - name: datahubAuthUsername
+      inputType: text
+      display: true
+      label: 'datahubAuth.username'
+      defaultValue: 'admin'
+      dependsOn:
+        name: governance
+        value: true
+    - name: datahubAuthPassword
+      inputType: text
+      display: true
+      label: 'datahubAuth.password'
+      defaultValue: 'admin'
+      dependsOn:
+        name: governance
+        value: true
+
+    - name: evidently
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Evidently'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: observability
+        value: true
+    - name: evidentlyAuthUsername
+      inputType: text
+      display: true
+      label: 'evidentlyAuth.username'
+      defaultValue: 'admin'
+      dependsOn:
+        name: observability
+        value: true
+    - name: evidentlyAuthPassword
+      inputType: text
+      display: true
+      label: 'evidentlyAuth.password'
+      defaultValue: 'admin'
+      dependsOn:
+        name: observability
+        value: true
+
+    - name: argocd
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Argo CD'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: serving
+        value: true
+    - name: argocdAuthUsername
+      inputType: text
+      display: true
+      label: 'argocdAuth.username'
+      defaultValue: 'admin'
+      dependsOn:
+        name: serving
+        value: true
+    - name: argocdAuthPassword
+      inputType: text
+      display: true
+      label: 'argocdAuth.password'
+      defaultValue: 'admin'
+      dependsOn:
+        name: serving
+        value: true
+
+    - name: jupyter
+      inputType: radio
+      display: true
+      choices:
+        - text: 'JupyterHub'
+          value: true
+      defaultValue: true
+      dependsOn:
+        name: notebook
+        value: true
+    - name: jupyterAuthUsername
+      inputType: text
+      display: true
+      label: 'jupyterAuth.username'
+      defaultValue: 'admin'
+      dependsOn:
+        name: notebook
+        value: true
+    - name: jupyterAuthPassword
+      inputType: text
+      display: true
+      label: 'jupyterAuth.password'
+      defaultValue: 'admin'
+      dependsOn:
+        name: notebook
+        value: true
+engine:
+  type: Merge
+  sources:
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'resources/values-overrides.yaml' ]
