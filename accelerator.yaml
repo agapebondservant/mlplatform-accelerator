@@ -44,6 +44,17 @@ accelerator:
       inputType: checkbox
       label: 'ML Notebook and Experimentation Platform'
 
+
+    - name: SECTION1
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Data Sources'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: datasource
+        value: true
     - name: POSTGRES
       dataType: boolean
       label: 'Postgres (Data Sources / Data Preprocessing)'
@@ -67,6 +78,16 @@ accelerator:
         name: POSTGRES
         value: true
 
+    - name: SECTION2
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Data Preprocessing'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: dataprocess
+        value: true
     - name: AIRFLOW
       dataType: boolean
       label: 'Airflow (Data Preprocessing / ML Training)'
@@ -90,6 +111,17 @@ accelerator:
         name: AIRFLOW
         value: true
 
+
+    - name: SECTION3
+      inputType: radio
+      display: true
+      choices:
+        - text: 'ML Training'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: training
+        value: true
     - name: MLFLOW
       dataType: boolean
       label: 'MLflow (Data Preprocessing / ML Training)'
@@ -113,6 +145,17 @@ accelerator:
         name: MLFLOW
         value: true
 
+
+    - name: SECTION4
+      inputType: radio
+      display: true
+      choices:
+        - text: 'ML Governance'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: governance
+        value: true
     - name: DATAHUB
       dataType: boolean
       label: 'DataHub (ML Governance)'
@@ -136,6 +179,17 @@ accelerator:
         name: DATAHUB
         value: true
 
+
+    - name: SECTION5
+      inputType: radio
+      display: true
+      choices:
+        - text: 'ML Observability'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: observability
+        value: true
     - name: EVIDENTLY
       dataType: boolean
       label: 'Evidently (ML Observability)'
@@ -159,6 +213,17 @@ accelerator:
         name: EVIDENTLY
         value: true
 
+
+    - name: SECTION6
+      inputType: radio
+      display: true
+      choices:
+        - text: 'ML Deployment and Serving'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: serving
+        value: true
     - name: ARGOCD
       dataType: boolean
       label: 'Argo CD (ML Deployment and Serving)'
@@ -182,6 +247,17 @@ accelerator:
         name: ARGOCD
         value: true
 
+
+    - name: SECTION7
+      inputType: radio
+      display: true
+      choices:
+        - text: 'ML Notebooks and Experimentation'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: notebook
+        value: true
     - name: JUPYTER
       dataType: boolean
       label: 'JupyterHub (ML Notebooks and Experimentation)'
