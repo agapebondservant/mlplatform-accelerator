@@ -49,8 +49,8 @@ accelerator:
       display: true
       choices:
         - text: 'Postgres'
-          value: true
-      defaultValue: true
+          value: 'selected'
+      defaultValue: 'selected'
       dependsOn:
         name: datasource
         value: true
@@ -76,8 +76,8 @@ accelerator:
       display: true
       choices:
         - text: 'Airflow'
-          value: true
-      defaultValue: true
+          value: 'selected'
+      defaultValue: 'selected'
       dependsOn:
         name: dataprocess
         value: true
@@ -103,8 +103,8 @@ accelerator:
       display: true
       choices:
         - text: 'MLflow'
-          value: true
-      defaultValue: true
+          value: 'selected'
+      defaultValue: 'selected'
       dependsOn:
         name: training
         value: true
@@ -130,8 +130,8 @@ accelerator:
       display: true
       choices:
         - text: 'DataHub'
-          value: true
-      defaultValue: true
+          value: 'selected'
+      defaultValue: 'selected'
       dependsOn:
         name: governance
         value: true
@@ -154,11 +154,11 @@ accelerator:
 
     - name: evidently
       inputType: radio
-      display: true
+      display: 'selected'
       choices:
         - text: 'Evidently'
           value: true
-      defaultValue: true
+      defaultValue: 'selected'
       dependsOn:
         name: observability
         value: true
@@ -184,8 +184,8 @@ accelerator:
       display: true
       choices:
         - text: 'Argo CD'
-          value: true
-      defaultValue: true
+          value: 'selected'
+      defaultValue: 'selected'
       dependsOn:
         name: serving
         value: true
@@ -211,8 +211,8 @@ accelerator:
       display: true
       choices:
         - text: 'JupyterHub'
-          value: true
-      defaultValue: true
+          value: 'selected'
+      defaultValue: 'selected'
       dependsOn:
         name: notebook
         value: true
