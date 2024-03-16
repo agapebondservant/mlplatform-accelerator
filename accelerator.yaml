@@ -44,7 +44,7 @@ accelerator:
       inputType: checkbox
       label: 'ML Notebook and Experimentation Platform'
 
-    - name: postgres
+    - name: ___postgres___
       inputType: radio
       display: true
       choices:
@@ -71,7 +71,7 @@ accelerator:
         name: datasource
         value: true
 
-    - name: airflow
+    - name: ___airflow___
       inputType: radio
       display: true
       choices:
@@ -98,7 +98,7 @@ accelerator:
         name: dataprocess
         value: true
 
-    - name: mlflow
+    - name: ___mlflow___
       inputType: radio
       display: true
       choices:
@@ -125,7 +125,7 @@ accelerator:
         name: training
         value: true
 
-    - name: datahub
+    - name: ___datahub___
       inputType: radio
       display: true
       choices:
@@ -152,7 +152,7 @@ accelerator:
         name: governance
         value: true
 
-    - name: evidently
+    - name: ___evidently___
       inputType: radio
       display: true
       choices:
@@ -179,7 +179,7 @@ accelerator:
         name: observability
         value: true
 
-    - name: argocd
+    - name: ___argocd___
       inputType: radio
       display: true
       choices:
@@ -206,7 +206,7 @@ accelerator:
         name: serving
         value: true
 
-    - name: jupyter
+    - name: ___jupyter___
       inputType: radio
       display: true
       choices:
