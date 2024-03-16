@@ -1,6 +1,6 @@
 accelerator:
   displayName: ML Platform Starter
-  description: Wizard for configuring the components of an MLOps platform on TAP
+  description: Wizard for configuring the components of an MLOps platform on TAP. Here, you can autogenerate the configuration that you need for one or more platforms that are essential for your ML environment - Data Sources platforms, Data Preprocessing platforms, ML Training platforms, ML Governance platforms, ML Observability platforms, ML Deployment and Serving platforms, ML Notebook and Experimentation platforms.
   iconUrl: https://cdn-icons-png.flaticon.com/512/7364/7364323.png
   tags:
     - "ML"
