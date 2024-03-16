@@ -12,8 +12,8 @@ accelerator:
     - "pipeline"
     - "GitOps"
     - "platform"
-  imports:
-    - name: airflow-fragment
+#  imports:
+#    - name: airflow-fragment
   options:
     - name: datasource
       dataType: boolean
