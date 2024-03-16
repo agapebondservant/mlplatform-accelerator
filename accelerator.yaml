@@ -57,7 +57,7 @@ accelerator:
         value: true
     - name: POSTGRES
       dataType: boolean
-      label: 'Postgres (Data Sources / Data Preprocessing)'
+      label: 'Postgres'
       dependsOn:
         name: datasource
         value: true
@@ -90,7 +90,7 @@ accelerator:
         value: true
     - name: AIRFLOW
       dataType: boolean
-      label: 'Airflow (Data Preprocessing / ML Training)'
+      label: 'Airflow'
       dependsOn:
         name: dataprocess
         value: true
@@ -124,7 +124,7 @@ accelerator:
         value: true
     - name: MLFLOW
       dataType: boolean
-      label: 'MLflow (Data Preprocessing / ML Training)'
+      label: 'MLflow'
       dependsOn:
         name: training
         value: true
@@ -158,7 +158,7 @@ accelerator:
         value: true
     - name: DATAHUB
       dataType: boolean
-      label: 'DataHub (ML Governance)'
+      label: 'DataHub'
       dependsOn:
         name: governance
         value: true
@@ -192,7 +192,7 @@ accelerator:
         value: true
     - name: EVIDENTLY
       dataType: boolean
-      label: 'Evidently (ML Observability)'
+      label: 'Evidently'
       dependsOn:
         name: observability
         value: true
@@ -226,7 +226,7 @@ accelerator:
         value: true
     - name: ARGOCD
       dataType: boolean
-      label: 'Argo CD (ML Deployment and Serving)'
+      label: 'Argo CD'
       dependsOn:
         name: serving
         value: true
@@ -260,7 +260,7 @@ accelerator:
         value: true
     - name: JUPYTER
       dataType: boolean
-      label: 'JupyterHub (ML Notebooks and Experimentation)'
+      label: 'JupyterHub'
       dependsOn:
         name: notebook
         value: true
