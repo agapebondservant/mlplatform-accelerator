@@ -1,5 +1,5 @@
 accelerator:
-  displayName: ML Platform Accelerator
+  displayName: ML Platform Starter
   description: Wizard for configuring the components of an MLOps platform on TAP
   iconUrl: https://cdn-icons-png.flaticon.com/512/7364/7364323.png
   tags:
@@ -48,7 +48,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'Postgres'
+        - text: 'Postgres (Data Sources / Data Preprocessing)'
           value: true
       defaultValue: true
       dependsOn:
@@ -75,7 +75,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'Airflow'
+        - text: 'Airflow (Data Preprocessing / ML Training)'
           value: true
       defaultValue: true
       dependsOn:
@@ -102,7 +102,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'MLflow'
+        - text: 'MLflow (Data Preprocessing / ML Training)'
           value: true
       defaultValue: true
       dependsOn:
@@ -129,7 +129,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'DataHub'
+        - text: 'DataHub (ML Governance)'
           value: true
       defaultValue: true
       dependsOn:
@@ -156,7 +156,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'Evidently'
+        - text: 'Evidently (ML Observability)'
           value: true
       defaultValue: true
       dependsOn:
@@ -183,7 +183,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'Argo CD'
+        - text: 'Argo CD (ML Deployment and Serving)'
           value: true
       defaultValue: true
       dependsOn:
@@ -210,7 +210,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'JupyterHub'
+        - text: 'JupyterHub (ML Notebooks and Experimentation)'
           value: true
       defaultValue: true
       dependsOn:
