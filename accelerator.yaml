@@ -20,6 +20,36 @@ accelerator:
       inputType: checkbox
       label: 'Data Sources Platform'
 
+    - name: dataprocess
+      dataType: boolean
+      inputType: checkbox
+      label: 'Data Preprocessing Platform'
+
+    - name: training
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Training Platform'
+
+    - name: governance
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Governance Platform'
+
+    - name: observability
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Observability Platform'
+
+    - name: serving
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Deployment and Serving Platform'
+
+    - name: notebook
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Notebook and Experimentation Platform'
+
 
     - name: POSTGRES
       inputType: radio
@@ -48,10 +78,6 @@ accelerator:
         name: POSTGRES
         value: selected
 
-    - name: dataprocess
-      dataType: boolean
-      inputType: checkbox
-      label: 'Data Preprocessing Platform'
 
     - name: AIRFLOW
       inputType: radio
@@ -81,11 +107,6 @@ accelerator:
         value: selected
 
 
-    - name: training
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Training Platform'
-
     - name: MLFLOW
       inputType: radio
       display: true
@@ -112,13 +133,6 @@ accelerator:
       dependsOn:
         name: MLFLOW
         value: selected
-
-
-    - name: governance
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Governance Platform'
-
 
 
     - name: DATAHUB
@@ -149,12 +163,6 @@ accelerator:
         value: selected
 
 
-    - name: observability
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Observability Platform'
-
-
     - name: EVIDENTLY
       inputType: radio
       display: true
@@ -183,12 +191,6 @@ accelerator:
         value: selected
 
 
-    - name: serving
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Deployment and Serving Platform'
-
-
     - name: ARGOCD
       inputType: radio
       display: true
@@ -215,12 +217,6 @@ accelerator:
       dependsOn:
         name: ARGOCD
         value: selected
-
-
-    - name: notebook
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Notebook and Experimentation Platform'
 
     - name: JUPYTER
       inputType: radio
