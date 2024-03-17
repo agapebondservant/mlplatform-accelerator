@@ -18,12 +18,22 @@ accelerator:
     - name: datasource
       dataType: boolean
       inputType: checkbox
-      label: 'DATA SOURCES PLATFORM'
+      label: 'Data Sources Platform'
 
 
     - name: POSTGRES
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Postgres (Data Sources / Data Preprocessing)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: datasource
+        value: true
+    - name: POSTGRESEDIT
       dataType: boolean
-      label: ' Postgres'
+      label: 'Click to edit'
       dependsOn:
         name: datasource
         value: true
@@ -33,7 +43,7 @@ accelerator:
       label: 'postgresAuth.username'
       defaultValue: 'pgadmin'
       dependsOn:
-        name: POSTGRES
+        name: POSTGRESEDIT
         value: true
     - name: postgresAuthPassword
       inputType: text
@@ -41,18 +51,28 @@ accelerator:
       label: 'postgresAuth.password'
       defaultValue: 'changeme'
       dependsOn:
-        name: POSTGRES
+        name: POSTGRESEDIT
         value: true
 
     - name: dataprocess
       dataType: boolean
       inputType: checkbox
-      label: 'DATA PREPROCESSING PLATFORM'
-
+      label: 'Data Preprocessing Platform'
 
     - name: AIRFLOW
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Airflow (Data Preprocessing / ML Training)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: dataprocess
+        value: true
+
+    - name: AIRFLOWEDIT
       dataType: boolean
-      label: ' Airflow'
+      label: 'Click to edit'
       dependsOn:
         name: dataprocess
         value: true
@@ -62,7 +82,7 @@ accelerator:
       label: 'airflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: AIRFLOW
+        name: AIRFLOWEDIT
         value: true
     - name: airflowAuthPassword
       inputType: text
@@ -70,19 +90,29 @@ accelerator:
       label: 'airflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: AIRFLOW
+        name: AIRFLOWEDIT
         value: true
 
 
     - name: training
       dataType: boolean
       inputType: checkbox
-      label: 'ML TRAINING PLATFORM'
-
+      label: 'ML Training Platform'
 
     - name: MLFLOW
+      inputType: radio
+      display: true
+      choices:
+        - text: 'MLflow (ML Training)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: training
+        value: true
+
+    - name: MLFLOWEDIT
       dataType: boolean
-      label: ' MLflow'
+      label: 'Click to edit'
       dependsOn:
         name: training
         value: true
@@ -92,7 +122,7 @@ accelerator:
       label: 'mlflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: MLFLOW
+        name: MLFLOWEDIT
         value: true
     - name: mlflowAuthPassword
       inputType: text
@@ -100,19 +130,30 @@ accelerator:
       label: 'mlflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: MLFLOW
+        name: MLFLOWEDIT
         value: true
 
 
     - name: governance
       dataType: boolean
       inputType: checkbox
-      label: 'ML GOVERNANCE PLATFORM'
+      label: 'ML Governance Platform'
+
 
 
     - name: DATAHUB
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Datahub (Data / ML Governance)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: governance
+        value: true
+    - name: DATAHUBEDIT
       dataType: boolean
-      label: ' DataHub'
+      label: 'Click to edit'
       dependsOn:
         name: governance
         value: true
@@ -122,7 +163,7 @@ accelerator:
       label: 'datahubAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: DATAHUB
+        name: DATAHUBEDIT
         value: true
     - name: datahubAuthPassword
       inputType: text
@@ -130,19 +171,29 @@ accelerator:
       label: 'datahubAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: DATAHUB
+        name: DATAHUBEDIT
         value: true
 
 
     - name: observability
       dataType: boolean
       inputType: checkbox
-      label: 'ML OBSERVABILITY PLATFORM'
+      label: 'ML Observability Platform'
 
 
     - name: EVIDENTLY
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Evidently (ML Monitoring & Observability)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: observability
+        value: true
+    - name: EVIDENTLYEDIT
       dataType: boolean
-      label: ' Evidently'
+      label: 'Click to edit'
       dependsOn:
         name: observability
         value: true
@@ -152,7 +203,7 @@ accelerator:
       label: 'evidentlyAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: EVIDENTLY
+        name: EVIDENTLYEDIT
         value: true
     - name: evidentlyAuthPassword
       inputType: text
@@ -160,19 +211,30 @@ accelerator:
       label: 'evidentlyAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: EVIDENTLY
+        name: EVIDENTLYEDIT
         value: true
 
 
     - name: serving
       dataType: boolean
       inputType: checkbox
-      label: 'ML DEPLOYMENT AND SERVING PLATFORM'
+      label: 'ML Deployment and Serving Platform'
 
 
     - name: ARGOCD
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Argo CD (ML / App Deployment)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: serving
+        value: true
+
+    - name: ARGOCDEDIT
       dataType: boolean
-      label: ' Argo CD'
+      label: 'Click to edit'
       dependsOn:
         name: serving
         value: true
@@ -182,7 +244,7 @@ accelerator:
       label: 'argocdAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: ARGOCD
+        name: ARGOCDEDIT
         value: true
     - name: argocdAuthPassword
       inputType: text
@@ -190,18 +252,29 @@ accelerator:
       label: 'argocdAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: ARGOCD
+        name: ARGOCDEDIT
         value: true
 
 
     - name: notebook
       dataType: boolean
       inputType: checkbox
-      label: 'ML NOTEBOOK AND EXPERIMENTATION PLATFORM'
+      label: 'ML Notebook and Experimentation Platform'
 
     - name: JUPYTER
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Jupyter (ML Notebooks & Experimentation)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: notebook
+        value: true
+
+    - name: JUPYTEREDIT
       dataType: boolean
-      label: ' JupyterHub'
+      label: 'Click to edit'
       dependsOn:
         name: notebook
         value: true
@@ -211,7 +284,7 @@ accelerator:
       label: 'jupyterAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: JUPYTER
+        name: JUPYTEREDIT
         value: true
     - name: jupyterAuthPassword
       inputType: text
@@ -219,7 +292,7 @@ accelerator:
       label: 'jupyterAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: JUPYTER
+        name: JUPYTEREDIT
         value: true
 
 
