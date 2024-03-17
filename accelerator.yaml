@@ -18,12 +18,12 @@ accelerator:
     - name: datasource
       dataType: boolean
       inputType: checkbox
-      label: 'Data Sources Platform'
+      label: 'DATA SOURCES PLATFORM'
 
 
     - name: POSTGRES
       dataType: boolean
-      label: '- Postgres'
+      label: ' Postgres'
       dependsOn:
         name: datasource
         value: true
@@ -47,12 +47,12 @@ accelerator:
     - name: dataprocess
       dataType: boolean
       inputType: checkbox
-      label: 'Data Preprocessing Platform'
+      label: 'DATA PREPROCESSING PLATFORM'
 
 
     - name: AIRFLOW
       dataType: boolean
-      label: '- Airflow'
+      label: ' Airflow'
       dependsOn:
         name: dataprocess
         value: true
@@ -77,12 +77,12 @@ accelerator:
     - name: training
       dataType: boolean
       inputType: checkbox
-      label: 'ML Training Platform'
+      label: 'ML TRAINING PLATFORM'
 
 
     - name: MLFLOW
       dataType: boolean
-      label: '- MLflow'
+      label: ' MLflow'
       dependsOn:
         name: training
         value: true
@@ -107,12 +107,12 @@ accelerator:
     - name: governance
       dataType: boolean
       inputType: checkbox
-      label: 'ML Governance Platform'
+      label: 'ML GOVERNANCE PLATFORM'
 
 
     - name: DATAHUB
       dataType: boolean
-      label: '- DataHub'
+      label: ' DataHub'
       dependsOn:
         name: governance
         value: true
@@ -137,12 +137,12 @@ accelerator:
     - name: observability
       dataType: boolean
       inputType: checkbox
-      label: 'ML Observability Platform'
+      label: 'ML OBSERVABILITY PLATFORM'
 
 
     - name: EVIDENTLY
       dataType: boolean
-      label: '- Evidently'
+      label: ' Evidently'
       dependsOn:
         name: observability
         value: true
@@ -167,12 +167,12 @@ accelerator:
     - name: serving
       dataType: boolean
       inputType: checkbox
-      label: 'ML Deployment and Serving Platform'
+      label: 'ML DEPLOYMENT AND SERVING PLATFORM'
 
 
     - name: ARGOCD
       dataType: boolean
-      label: '- Argo CD'
+      label: ' Argo CD'
       dependsOn:
         name: serving
         value: true
@@ -197,11 +197,11 @@ accelerator:
     - name: notebook
       dataType: boolean
       inputType: checkbox
-      label: 'ML Notebook and Experimentation Platform'
+      label: 'ML NOTEBOOK AND EXPERIMENTATION PLATFORM'
 
     - name: JUPYTER
       dataType: boolean
-      label: '- JupyterHub'
+      label: ' JupyterHub'
       dependsOn:
         name: notebook
         value: true
