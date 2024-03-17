@@ -20,7 +20,7 @@ accelerator:
       label: Type of ML Platform
       choices:
         - value: "none"
-          text: "Select a platform"
+          text: "--Select a platform--"
         - value: "datasource"
           text: Data Sources
         - value: "dataprocess"
