@@ -19,7 +19,7 @@ accelerator:
       inputType: select
       label: Type of ML Platform
       choices:
-        - value: "none"
+        - value: ""
           text: ""
         - value: "datasource"
           text: Data Sources
