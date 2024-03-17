@@ -23,7 +23,7 @@ accelerator:
 
     - name: POSTGRES
       dataType: boolean
-      label: '      Postgres'
+      label: '* Postgres'
       dependsOn:
         name: datasource
         value: true
@@ -52,7 +52,7 @@ accelerator:
 
     - name: AIRFLOW
       dataType: boolean
-      label: '      Airflow'
+      label: '* Airflow'
       dependsOn:
         name: dataprocess
         value: true
@@ -82,7 +82,7 @@ accelerator:
 
     - name: MLFLOW
       dataType: boolean
-      label: '      MLflow'
+      label: '* MLflow'
       dependsOn:
         name: training
         value: true
@@ -112,7 +112,7 @@ accelerator:
 
     - name: DATAHUB
       dataType: boolean
-      label: '      DataHub'
+      label: '* DataHub'
       dependsOn:
         name: governance
         value: true
@@ -142,7 +142,7 @@ accelerator:
 
     - name: EVIDENTLY
       dataType: boolean
-      label: '      Evidently'
+      label: '* Evidently'
       dependsOn:
         name: observability
         value: true
@@ -172,7 +172,7 @@ accelerator:
 
     - name: ARGOCD
       dataType: boolean
-      label: '      Argo CD'
+      label: '* Argo CD'
       dependsOn:
         name: serving
         value: true
@@ -201,7 +201,7 @@ accelerator:
 
     - name: JUPYTER
       dataType: boolean
-      label: '      JupyterHub'
+      label: '* JupyterHub'
       dependsOn:
         name: notebook
         value: true
