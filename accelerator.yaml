@@ -19,8 +19,8 @@ accelerator:
       inputType: select
       label: Type of ML Platform
       choices:
-        - value: ""
-          text: ""
+        - value: "none"
+          text: "Select a platform"
         - value: "datasource"
           text: Data Sources
         - value: "dataprocess"
@@ -47,8 +47,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'datasource'"
-        value: true
+        name: mlPlatformType
+        value: datasource
     - name: postgresAuthUsername
       inputType: text
       display: true
@@ -75,8 +75,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'dataprocess'"
-        value: true
+        name: mlPlatformType
+        value: dataprocess
     - name: airflowAuthUsername
       inputType: text
       display: true
@@ -103,8 +103,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'training'"
-        value: true
+        name: mlPlatformType
+        value: training
     - name: mlflowAuthUsername
       inputType: text
       display: true
@@ -131,8 +131,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'governance'"
-        value: true
+        name: mlPlatformType
+        value: governance
     - name: datahubAuthUsername
       inputType: text
       display: true
@@ -159,8 +159,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'observability'"
-        value: true
+        name: mlPlatformType
+        value: observability
     - name: evidentlyAuthUsername
       inputType: text
       display: true
@@ -187,8 +187,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'serving'"
-        value: true
+        name: mlPlatformType
+        value: serving
     - name: argocdAuthUsername
       inputType: text
       display: true
@@ -214,8 +214,8 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: "#mlPlatformType == 'notebook'"
-        value: true
+        name: mlPlatformType
+        value: notebook
 
     - name: jupyterAuthUsername
       inputType: text
