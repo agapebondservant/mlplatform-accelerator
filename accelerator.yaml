@@ -15,40 +15,28 @@ accelerator:
 #  imports:
 #    - name: airflow-fragment
   options:
-    - name: datasource
-      dataType: boolean
-      inputType: checkbox
-      label: 'Data Sources Platform'
-
-    - name: dataprocess
-      dataType: boolean
-      inputType: checkbox
-      label: 'Data Preprocessing Platform'
-
-    - name: training
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Training Platform'
-
-    - name: governance
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Governance Platform'
-
-    - name: observability
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Observability Platform'
-
-    - name: serving
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Deployment and Serving Platform'
-
-    - name: notebook
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Notebook and Experimentation Platform'
+    - name: mlPlatformType
+      inputType: select
+      label: Type of ML Platform
+      choices:
+        - value: "none"
+          text: ""
+        - value: "datasource"
+          text: Data Sources
+        - value: "dataprocess"
+          text: Data Preprocessing
+        - value: "training"
+          text: ML Training
+        - value: "governance"
+          text: ML Governance
+        - value: "observability"
+          text: ML Observability
+        - value: "serving"
+          text: ML Deployment and Serving
+        - value: "notebook"
+          text: ML Notebook and Experimentation
+      defaultValue: "none"
+      required: true
 
 
     - name: POSTGRES
@@ -59,7 +47,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: datasource
+        name: "#mlPlatformType == 'datasource'"
         value: true
     - name: postgresAuthUsername
       inputType: text
@@ -87,7 +75,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: dataprocess
+        name: "#mlPlatformType == 'dataprocess'"
         value: true
     - name: airflowAuthUsername
       inputType: text
@@ -115,7 +103,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: training
+        name: "#mlPlatformType == 'training'"
         value: true
     - name: mlflowAuthUsername
       inputType: text
@@ -143,7 +131,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: governance
+        name: "#mlPlatformType == 'governance'"
         value: true
     - name: datahubAuthUsername
       inputType: text
@@ -171,7 +159,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: observability
+        name: "#mlPlatformType == 'observability'"
         value: true
     - name: evidentlyAuthUsername
       inputType: text
@@ -199,7 +187,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: serving
+        name: "#mlPlatformType == 'serving'"
         value: true
     - name: argocdAuthUsername
       inputType: text
@@ -226,7 +214,7 @@ accelerator:
           value: selected
       defaultValue: selected
       dependsOn:
-        name: notebook
+        name: "#mlPlatformType == 'notebook'"
         value: true
 
     - name: jupyterAuthUsername
