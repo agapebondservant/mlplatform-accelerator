@@ -19,42 +19,8 @@ accelerator:
       dataType: boolean
       inputType: checkbox
       label: 'Data Sources Platform'
-    - name: dataprocess
-      dataType: boolean
-      inputType: checkbox
-      label: 'Data Preprocessing Platform'
-    - name: training
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Training Platform'
-    - name: governance
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Governance Platform'
-    - name: observability
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Observability Platform'
-    - name: serving
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Deployment and Serving Platform'
-    - name: notebook
-      dataType: boolean
-      inputType: checkbox
-      label: 'ML Notebook and Experimentation Platform'
 
 
-    - name: SECTION1
-      inputType: radio
-      display: true
-      choices:
-        - text: 'Data Sources'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: datasource
-        value: true
     - name: POSTGRES
       dataType: boolean
       label: 'Postgres'
@@ -78,16 +44,12 @@ accelerator:
         name: POSTGRES
         value: true
 
-    - name: SECTION2
-      inputType: radio
-      display: true
-      choices:
-        - text: 'Data Preprocessing'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: dataprocess
-        value: true
+    - name: dataprocess
+      dataType: boolean
+      inputType: checkbox
+      label: 'Data Preprocessing Platform'
+
+
     - name: AIRFLOW
       dataType: boolean
       label: 'Airflow'
@@ -112,16 +74,12 @@ accelerator:
         value: true
 
 
-    - name: SECTION3
-      inputType: radio
-      display: true
-      choices:
-        - text: 'ML Training'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: training
-        value: true
+    - name: training
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Training Platform'
+
+
     - name: MLFLOW
       dataType: boolean
       label: 'MLflow'
@@ -146,16 +104,12 @@ accelerator:
         value: true
 
 
-    - name: SECTION4
-      inputType: radio
-      display: true
-      choices:
-        - text: 'ML Governance'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: governance
-        value: true
+    - name: governance
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Governance Platform'
+
+
     - name: DATAHUB
       dataType: boolean
       label: 'DataHub'
@@ -180,16 +134,12 @@ accelerator:
         value: true
 
 
-    - name: SECTION5
-      inputType: radio
-      display: true
-      choices:
-        - text: 'ML Observability'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: observability
-        value: true
+    - name: observability
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Observability Platform'
+
+
     - name: EVIDENTLY
       dataType: boolean
       label: 'Evidently'
@@ -214,16 +164,12 @@ accelerator:
         value: true
 
 
-    - name: SECTION6
-      inputType: radio
-      display: true
-      choices:
-        - text: 'ML Deployment and Serving'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: serving
-        value: true
+    - name: serving
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Deployment and Serving Platform'
+
+
     - name: ARGOCD
       dataType: boolean
       label: 'Argo CD'
@@ -248,16 +194,11 @@ accelerator:
         value: true
 
 
-    - name: SECTION7
-      inputType: radio
-      display: true
-      choices:
-        - text: 'ML Notebooks and Experimentation'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: notebook
-        value: true
+    - name: notebook
+      dataType: boolean
+      inputType: checkbox
+      label: 'ML Notebook and Experimentation Platform'
+
     - name: JUPYTER
       dataType: boolean
       label: 'JupyterHub'
@@ -280,6 +221,8 @@ accelerator:
       dependsOn:
         name: JUPYTER
         value: true
+
+        
 engine:
   type: Merge
   sources:
