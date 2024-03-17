@@ -38,7 +38,7 @@ accelerator:
       defaultValue: 'pgadmin'
       dependsOn:
         name: POSTGRES
-        value: true
+        value: selected
     - name: postgresAuthPassword
       inputType: text
       display: true
@@ -46,7 +46,7 @@ accelerator:
       defaultValue: 'changeme'
       dependsOn:
         name: POSTGRES
-        value: true
+        value: selected
 
     - name: dataprocess
       dataType: boolean
@@ -70,7 +70,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: AIRFLOW
-        value: true
+        value: selected
     - name: airflowAuthPassword
       inputType: text
       display: true
@@ -78,7 +78,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: AIRFLOW
-        value: true
+        value: selected
 
 
     - name: training
@@ -103,7 +103,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: MLFLOW
-        value: true
+        value: selected
     - name: mlflowAuthPassword
       inputType: text
       display: true
@@ -111,7 +111,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: MLFLOW
-        value: true
+        value: selected
 
 
     - name: governance
@@ -138,7 +138,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: DATAHUB
-        value: true
+        value: selected
     - name: datahubAuthPassword
       inputType: text
       display: true
@@ -146,7 +146,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: DATAHUB
-        value: true
+        value: selected
 
 
     - name: observability
@@ -172,7 +172,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: EVIDENTLY
-        value: true
+        value: selected
     - name: evidentlyAuthPassword
       inputType: text
       display: true
@@ -180,7 +180,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: EVIDENTLY
-        value: true
+        value: selected
 
 
     - name: serving
@@ -206,7 +206,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: ARGOCD
-        value: true
+        value: selected
     - name: argocdAuthPassword
       inputType: text
       display: true
@@ -214,7 +214,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: ARGOCD
-        value: true
+        value: selected
 
 
     - name: notebook
@@ -240,7 +240,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: JUPYTER
-        value: true
+        value: selected
     - name: jupyterAuthPassword
       inputType: text
       display: true
@@ -248,7 +248,7 @@ accelerator:
       defaultValue: 'admin'
       dependsOn:
         name: JUPYTER
-        value: true
+        value: selected
 
 
 engine:
