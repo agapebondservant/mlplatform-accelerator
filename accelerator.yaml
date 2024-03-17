@@ -31,19 +31,13 @@ accelerator:
       dependsOn:
         name: datasource
         value: true
-    - name: POSTGRESEDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: datasource
-        value: true
     - name: postgresAuthUsername
       inputType: text
       display: true
       label: 'postgresAuth.username'
       defaultValue: 'pgadmin'
       dependsOn:
-        name: POSTGRESEDIT
+        name: POSTGRES
         value: true
     - name: postgresAuthPassword
       inputType: text
@@ -51,7 +45,7 @@ accelerator:
       label: 'postgresAuth.password'
       defaultValue: 'changeme'
       dependsOn:
-        name: POSTGRESEDIT
+        name: POSTGRES
         value: true
 
     - name: dataprocess
@@ -69,20 +63,13 @@ accelerator:
       dependsOn:
         name: dataprocess
         value: true
-
-    - name: AIRFLOWEDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: dataprocess
-        value: true
     - name: airflowAuthUsername
       inputType: text
       display: true
       label: 'airflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: AIRFLOWEDIT
+        name: AIRFLOW
         value: true
     - name: airflowAuthPassword
       inputType: text
@@ -90,7 +77,7 @@ accelerator:
       label: 'airflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: AIRFLOWEDIT
+        name: AIRFLOW
         value: true
 
 
@@ -109,20 +96,13 @@ accelerator:
       dependsOn:
         name: training
         value: true
-
-    - name: MLFLOWEDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: training
-        value: true
     - name: mlflowAuthUsername
       inputType: text
       display: true
       label: 'mlflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: MLFLOWEDIT
+        name: MLFLOW
         value: true
     - name: mlflowAuthPassword
       inputType: text
@@ -130,7 +110,7 @@ accelerator:
       label: 'mlflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: MLFLOWEDIT
+        name: MLFLOW
         value: true
 
 
@@ -151,19 +131,13 @@ accelerator:
       dependsOn:
         name: governance
         value: true
-    - name: DATAHUBEDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: governance
-        value: true
     - name: datahubAuthUsername
       inputType: text
       display: true
       label: 'datahubAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: DATAHUBEDIT
+        name: DATAHUB
         value: true
     - name: datahubAuthPassword
       inputType: text
@@ -171,7 +145,7 @@ accelerator:
       label: 'datahubAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: DATAHUBEDIT
+        name: DATAHUB
         value: true
 
 
@@ -191,19 +165,13 @@ accelerator:
       dependsOn:
         name: observability
         value: true
-    - name: EVIDENTLYEDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: observability
-        value: true
     - name: evidentlyAuthUsername
       inputType: text
       display: true
       label: 'evidentlyAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: EVIDENTLYEDIT
+        name: EVIDENTLY
         value: true
     - name: evidentlyAuthPassword
       inputType: text
@@ -211,7 +179,7 @@ accelerator:
       label: 'evidentlyAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: EVIDENTLYEDIT
+        name: EVIDENTLY
         value: true
 
 
@@ -231,20 +199,13 @@ accelerator:
       dependsOn:
         name: serving
         value: true
-
-    - name: ARGOCDEDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: serving
-        value: true
     - name: argocdAuthUsername
       inputType: text
       display: true
       label: 'argocdAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: ARGOCDEDIT
+        name: ARGOCD
         value: true
     - name: argocdAuthPassword
       inputType: text
@@ -252,7 +213,7 @@ accelerator:
       label: 'argocdAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: ARGOCDEDIT
+        name: ARGOCD
         value: true
 
 
@@ -272,19 +233,13 @@ accelerator:
         name: notebook
         value: true
 
-    - name: JUPYTEREDIT
-      dataType: boolean
-      label: 'Click to edit'
-      dependsOn:
-        name: notebook
-        value: true
     - name: jupyterAuthUsername
       inputType: text
       display: true
       label: 'jupyterAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: JUPYTEREDIT
+        name: JUPYTER
         value: true
     - name: jupyterAuthPassword
       inputType: text
@@ -292,7 +247,7 @@ accelerator:
       label: 'jupyterAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: JUPYTEREDIT
+        name: JUPYTER
         value: true
 
 
