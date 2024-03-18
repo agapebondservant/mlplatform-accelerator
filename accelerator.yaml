@@ -12,8 +12,6 @@ accelerator:
     - "pipeline"
     - "GitOps"
     - "platform"
-#  imports:
-#    - name: airflow-fragment
   options:
     - name: mlPlatformType
       inputType: select
@@ -234,6 +232,15 @@ accelerator:
         name: JUPYTER
         value: selected
 
+  imports:
+    - name: airflow-fragment
+      expose:
+        - name: "*"
+          dependsOn:
+            name: AIRFLOW
+            value: selected
+      exposeTypes:
+        - name: "*"
 
 engine:
   type: Merge
