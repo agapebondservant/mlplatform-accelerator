@@ -235,6 +235,11 @@ accelerator:
   imports:
     - name: airflow-fragment
       expose:
+        - name: "mlPlatformType"
+          as: "airflowMlPlatformType"
+          dependsOn:
+            name: mlPlatformType
+            value: hidden
         - name: "*"
           dependsOn:
             name: mlPlatformType
