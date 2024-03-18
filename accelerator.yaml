@@ -237,8 +237,8 @@ accelerator:
       expose:
         - name: "*"
           dependsOn:
-            name: AIRFLOW
-            value: selected
+            name: mlPlatformType
+            value: dataprocess
       exposeTypes:
         - name: "*"
 
