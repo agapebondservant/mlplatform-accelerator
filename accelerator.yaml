@@ -37,7 +37,7 @@ accelerator:
       required: true
 
 
-    - name: POSTGRES
+    - name: Postgres
       inputType: radio
       display: true
       choices:
@@ -53,7 +53,7 @@ accelerator:
       label: 'postgresAuth.username'
       defaultValue: 'pgadmin'
       dependsOn:
-        name: POSTGRES
+        name: Postgres
         value: selected
     - name: postgresAuthPassword
       inputType: text
@@ -61,11 +61,11 @@ accelerator:
       label: 'postgresAuth.password'
       defaultValue: 'changeme'
       dependsOn:
-        name: POSTGRES
+        name: Postgres
         value: selected
 
 
-    - name: AIRFLOW
+    - name: Airflow
       inputType: radio
       display: true
       choices:
@@ -81,7 +81,7 @@ accelerator:
       label: 'airflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: AIRFLOW
+        name: Airflow
         value: selected
     - name: airflowAuthPassword
       inputType: text
@@ -89,11 +89,11 @@ accelerator:
       label: 'airflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: AIRFLOW
+        name: Airflow
         value: selected
 
 
-    - name: MLFLOW
+    - name: Mlflow
       inputType: radio
       display: true
       choices:
@@ -109,7 +109,7 @@ accelerator:
       label: 'mlflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: MLFLOW
+        name: Mlflow
         value: selected
     - name: mlflowAuthPassword
       inputType: text
@@ -117,11 +117,11 @@ accelerator:
       label: 'mlflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: MLFLOW
+        name: Mlflow
         value: selected
 
 
-    - name: DATAHUB
+    - name: Datahub
       inputType: radio
       display: true
       choices:
@@ -137,7 +137,7 @@ accelerator:
       label: 'datahubAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: DATAHUB
+        name: Datahub
         value: selected
     - name: datahubAuthPassword
       inputType: text
@@ -145,11 +145,11 @@ accelerator:
       label: 'datahubAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: DATAHUB
+        name: Datahub
         value: selected
 
 
-    - name: EVIDENTLY
+    - name: Evidently
       inputType: radio
       display: true
       choices:
@@ -165,7 +165,7 @@ accelerator:
       label: 'evidentlyAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: EVIDENTLY
+        name: Evidently
         value: selected
     - name: evidentlyAuthPassword
       inputType: text
@@ -173,11 +173,11 @@ accelerator:
       label: 'evidentlyAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: EVIDENTLY
+        name: Evidently
         value: selected
 
 
-    - name: ARGOCD
+    - name: ArgoCd
       inputType: radio
       display: true
       choices:
@@ -193,7 +193,7 @@ accelerator:
       label: 'argocdAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: ARGOCD
+        name: ArgoCd
         value: selected
     - name: argocdAuthPassword
       inputType: text
@@ -201,10 +201,10 @@ accelerator:
       label: 'argocdAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: ARGOCD
+        name: ArgoCd
         value: selected
 
-    - name: JUPYTER
+    - name: Jupyter
       inputType: radio
       display: true
       choices:
@@ -221,7 +221,7 @@ accelerator:
       label: 'jupyterAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: JUPYTER
+        name: Jupyter
         value: selected
     - name: jupyterAuthPassword
       inputType: text
@@ -229,7 +229,7 @@ accelerator:
       label: 'jupyterAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: JUPYTER
+        name: Jupyter
         value: selected
 
   imports:
