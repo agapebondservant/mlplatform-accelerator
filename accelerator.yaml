@@ -41,7 +41,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'postgres (Data Sources / Data Preprocessing)'
+        - text: 'Postgres (Data Sources / Data Preprocessing)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -69,7 +69,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'airflow (Data Preprocessing / ML Training)'
+        - text: 'Airflow (Data Preprocessing / ML Training)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -125,7 +125,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'datahub (Data / ML Governance)'
+        - text: 'Datahub (Data / ML Governance)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -153,7 +153,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'evidently (ML Monitoring & Observability)'
+        - text: 'Evidently (ML Monitoring & Observability)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -208,7 +208,7 @@ accelerator:
       inputType: radio
       display: true
       choices:
-        - text: 'jupyter (ML Notebooks & Experimentation)'
+        - text: 'Jupyter (ML Notebooks & Experimentation)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -232,20 +232,20 @@ accelerator:
         name: jupyter
         value: selected
 
-#  imports:
-#    - name: airflow-fragment
-#      expose:
-#        - name: "mlPlatformType"
-#          as: "airflowMlPlatformType"
-#          dependsOn:
-#            name: mlPlatformType
-#            value: hidden
-#        - name: "*"
-#          dependsOn:
-#            name: mlPlatformType
-#            value: dataprocess
-#      exposeTypes:
-#        - name: "*"
+  imports:
+    - name: airflow-fragment
+      expose:
+        - name: "mlPlatformType"
+          as: "airflowMlPlatformType"
+          dependsOn:
+            name: mlPlatformType
+            value: hidden
+        - name: "*"
+          dependsOn:
+            name: mlPlatformType
+            value: dataprocess
+      exposeTypes:
+        - name: "*"
 
 engine:
   type: Merge
