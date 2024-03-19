@@ -37,11 +37,11 @@ accelerator:
       required: true
 
 
-    - name: Postgres
+    - name: postgres
       inputType: radio
       display: true
       choices:
-        - text: 'Postgres (Data Sources / Data Preprocessing)'
+        - text: 'postgres (Data Sources / Data Preprocessing)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -53,7 +53,7 @@ accelerator:
       label: 'postgresAuth.username'
       defaultValue: 'pgadmin'
       dependsOn:
-        name: Postgres
+        name: postgres
         value: selected
     - name: postgresAuthPassword
       inputType: text
@@ -61,15 +61,15 @@ accelerator:
       label: 'postgresAuth.password'
       defaultValue: 'changeme'
       dependsOn:
-        name: Postgres
+        name: postgres
         value: selected
 
 
-    - name: Airflow
+    - name: airflow
       inputType: radio
       display: true
       choices:
-        - text: 'Airflow (Data Preprocessing / ML Training)'
+        - text: 'airflow (Data Preprocessing / ML Training)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -81,7 +81,7 @@ accelerator:
       label: 'airflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: Airflow
+        name: airflow
         value: selected
     - name: airflowAuthPassword
       inputType: text
@@ -89,11 +89,11 @@ accelerator:
       label: 'airflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: Airflow
+        name: airflow
         value: selected
 
 
-    - name: Mlflow
+    - name: mlflow
       inputType: radio
       display: true
       choices:
@@ -109,7 +109,7 @@ accelerator:
       label: 'mlflowAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: Mlflow
+        name: mlflow
         value: selected
     - name: mlflowAuthPassword
       inputType: text
@@ -117,15 +117,15 @@ accelerator:
       label: 'mlflowAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: Mlflow
+        name: mlflow
         value: selected
 
 
-    - name: Datahub
+    - name: datahub
       inputType: radio
       display: true
       choices:
-        - text: 'Datahub (Data / ML Governance)'
+        - text: 'datahub (Data / ML Governance)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -137,7 +137,7 @@ accelerator:
       label: 'datahubAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: Datahub
+        name: datahub
         value: selected
     - name: datahubAuthPassword
       inputType: text
@@ -145,15 +145,15 @@ accelerator:
       label: 'datahubAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: Datahub
+        name: datahub
         value: selected
 
 
-    - name: Evidently
+    - name: evidently
       inputType: radio
       display: true
       choices:
-        - text: 'Evidently (ML Monitoring & Observability)'
+        - text: 'evidently (ML Monitoring & Observability)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -165,7 +165,7 @@ accelerator:
       label: 'evidentlyAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: Evidently
+        name: evidently
         value: selected
     - name: evidentlyAuthPassword
       inputType: text
@@ -173,11 +173,11 @@ accelerator:
       label: 'evidentlyAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: Evidently
+        name: evidently
         value: selected
 
 
-    - name: ArgoCd
+    - name: argocd
       inputType: radio
       display: true
       choices:
@@ -193,7 +193,7 @@ accelerator:
       label: 'argocdAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: ArgoCd
+        name: argocd
         value: selected
     - name: argocdAuthPassword
       inputType: text
@@ -201,14 +201,14 @@ accelerator:
       label: 'argocdAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: ArgoCd
+        name: argocd
         value: selected
 
-    - name: Jupyter
+    - name: jupyter
       inputType: radio
       display: true
       choices:
-        - text: 'Jupyter (ML Notebooks & Experimentation)'
+        - text: 'jupyter (ML Notebooks & Experimentation)'
           value: selected
       defaultValue: selected
       dependsOn:
@@ -221,7 +221,7 @@ accelerator:
       label: 'jupyterAuth.username'
       defaultValue: 'admin'
       dependsOn:
-        name: Jupyter
+        name: jupyter
         value: selected
     - name: jupyterAuthPassword
       inputType: text
@@ -229,7 +229,7 @@ accelerator:
       label: 'jupyterAuth.password'
       defaultValue: 'admin'
       dependsOn:
-        name: Jupyter
+        name: jupyter
         value: selected
 
 #  imports:
