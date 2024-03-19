@@ -75,22 +75,6 @@ accelerator:
       dependsOn:
         name: mlPlatformType
         value: dataprocess
-    - name: airflowAuthUsername
-      inputType: text
-      display: true
-      label: 'airflowAuth.username'
-      defaultValue: 'admin'
-      dependsOn:
-        name: airflow
-        value: selected
-    - name: airflowAuthPassword
-      inputType: text
-      display: true
-      label: 'airflowAuth.password'
-      defaultValue: 'admin'
-      dependsOn:
-        name: airflow
-        value: selected
 
 
     - name: mlflow
