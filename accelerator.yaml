@@ -254,6 +254,6 @@ engine:
       transformations:
 #        - type: Include
 #          patterns: [ 'resources/values-overrides.yaml' ]
-        - type: InvokeFragment
-          condition: "#mlPlatformType == 'dataprocess'"
-          reference: airflow-fragment
+#        - type: InvokeFragment
+#          condition: "#mlPlatformType == 'dataprocess'"
+#          reference: airflow-fragment
