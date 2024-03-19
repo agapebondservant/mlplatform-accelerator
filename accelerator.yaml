@@ -252,8 +252,8 @@ engine:
   sources:
     - type: Chain
       transformations:
-        - type: Include
-          patterns: [ 'resources/values-overrides.yaml' ]
-#        - type: InvokeFragment
-#          condition: "#mlPlatformType == 'dataprocess'"
-#          reference: airflow-fragment
+#        - type: Include
+#          patterns: [ 'resources/values-overrides.yaml' ]
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'dataprocess'"
+          reference: airflow-fragment
