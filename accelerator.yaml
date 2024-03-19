@@ -236,6 +236,8 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
           reference: airflow-fragment
+          anchor: [ 'airflow/values-overrides.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'datasource'"
           reference: postgres-fragment
+          anchor: [ 'postgres/values-overrides.yaml' ]
