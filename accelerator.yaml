@@ -236,3 +236,6 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
           reference: airflow-fragment
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'datasource'"
+          reference: postgres-fragment
