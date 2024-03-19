@@ -232,20 +232,20 @@ accelerator:
         name: Jupyter
         value: selected
 
-  imports:
-    - name: airflow-fragment
-      expose:
-        - name: "mlPlatformType"
-          as: "airflowMlPlatformType"
-          dependsOn:
-            name: mlPlatformType
-            value: hidden
-        - name: "*"
-          dependsOn:
-            name: mlPlatformType
-            value: dataprocess
-      exposeTypes:
-        - name: "*"
+#  imports:
+#    - name: airflow-fragment
+#      expose:
+#        - name: "mlPlatformType"
+#          as: "airflowMlPlatformType"
+#          dependsOn:
+#            name: mlPlatformType
+#            value: hidden
+#        - name: "*"
+#          dependsOn:
+#            name: mlPlatformType
+#            value: dataprocess
+#      exposeTypes:
+#        - name: "*"
 
 engine:
   type: Merge
