@@ -47,22 +47,6 @@ accelerator:
       dependsOn:
         name: mlPlatformType
         value: datasource
-    - name: postgresAuthUsername
-      inputType: text
-      display: true
-      label: 'postgresAuth.username'
-      defaultValue: 'pgadmin'
-      dependsOn:
-        name: postgres
-        value: selected
-    - name: postgresAuthPassword
-      inputType: text
-      display: true
-      label: 'postgresAuth.password'
-      defaultValue: 'changeme'
-      dependsOn:
-        name: postgres
-        value: selected
 
 
     - name: airflow
@@ -228,6 +212,19 @@ accelerator:
           dependsOn:
             name: mlPlatformType
             value: dataprocess
+      exposeTypes:
+        - name: "*"
+    - name: postgres-fragment
+      expose:
+        - name: "mlPlatformType"
+          as: "postgresMlPlatformType"
+          dependsOn:
+            name: mlPlatformType
+            value: hidden
+        - name: "*"
+          dependsOn:
+            name: mlPlatformType
+            value: datasource
       exposeTypes:
         - name: "*"
 
