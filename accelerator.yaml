@@ -37,18 +37,6 @@ accelerator:
       required: true
 
 
-    - name: postgres
-      inputType: radio
-      display: true
-      choices:
-        - text: 'Postgres (Data Sources / Data Preprocessing)'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: mlPlatformType
-        value: datasource
-
-
     - name: airflow
       inputType: radio
       display: true
