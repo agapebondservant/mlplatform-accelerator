@@ -207,24 +207,32 @@ engine:
   sources:
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
           reference: airflow-fragment
           anchor: "airflow"
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'datasource'"
           reference: postgres-fragment
           anchor: "postgres"
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-mlflow-fragment
           anchor: "bitnami-mlflow"
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-ray-fragment
