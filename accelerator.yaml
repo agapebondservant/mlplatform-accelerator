@@ -73,6 +73,18 @@ accelerator:
         value: training
 
 
+    - name: ray
+      inputType: radio
+      display: true
+      choices:
+        - text: 'Ray (ML Training)'
+          value: selected
+      defaultValue: selected
+      dependsOn:
+        name: mlPlatformType
+        value: training
+
+
     - name: datahub
       inputType: radio
       display: true
@@ -224,6 +236,19 @@ accelerator:
             value: training
       exposeTypes:
         - name: "*"
+    - name: bitnami-ray-fragment
+      expose:
+        - name: "mlPlatformType"
+          as: "bitnamiRayMlPlatformType"
+          dependsOn:
+            name: mlPlatformType
+            value: hidden
+        - name: "*"
+          dependsOn:
+            name: mlPlatformType
+            value: training
+      exposeTypes:
+        - name: "*"
 
 engine:
   type: Merge
@@ -242,3 +267,7 @@ engine:
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-mlflow-fragment
           anchor: "bitnami-mlflow"
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'training'"
+          reference: bitnami-ray-fragment
+          anchor: "bitnami-ray"
