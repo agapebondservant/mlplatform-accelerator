@@ -37,42 +37,6 @@ accelerator:
       required: true
 
 
-    - name: airflow
-      inputType: radio
-      display: true
-      choices:
-        - text: 'Airflow (Data Preprocessing / ML Training)'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: mlPlatformType
-        value: dataprocess
-
-
-    - name: mlflow
-      inputType: radio
-      display: true
-      choices:
-        - text: 'MLflow (ML Training)'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: mlPlatformType
-        value: training
-
-
-    - name: ray
-      inputType: radio
-      display: true
-      choices:
-        - text: 'Ray (ML Training)'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: mlPlatformType
-        value: training
-
-
     - name: datahub
       inputType: radio
       display: true
