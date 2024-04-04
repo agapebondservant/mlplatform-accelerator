@@ -120,34 +120,6 @@ accelerator:
         name: argocd
         value: selected
 
-    - name: jupyter
-      inputType: radio
-      display: true
-      choices:
-        - text: 'Jupyter (ML Notebooks & Experimentation)'
-          value: selected
-      defaultValue: selected
-      dependsOn:
-        name: mlPlatformType
-        value: notebook
-
-    - name: jupyterAuthUsername
-      inputType: text
-      display: true
-      label: 'jupyterAuth.username'
-      defaultValue: 'admin'
-      dependsOn:
-        name: jupyter
-        value: selected
-    - name: jupyterAuthPassword
-      inputType: text
-      display: true
-      label: 'jupyterAuth.password'
-      defaultValue: 'admin'
-      dependsOn:
-        name: jupyter
-        value: selected
-
   imports:
     - name: airflow-fragment
       expose:
@@ -201,6 +173,19 @@ accelerator:
             value: training
       exposeTypes:
         - name: "*"
+    - name: bitnami-jupyter-fragment
+      expose:
+        - name: "mlPlatformType"
+          as: "bitnamiJupyterMlPlatformType"
+          dependsOn:
+            name: mlPlatformType
+            value: hidden
+        - name: "*"
+          dependsOn:
+            name: mlPlatformType
+            value: notebook
+      exposeTypes:
+        - name: "*"
 
 engine:
   type: Merge
@@ -237,3 +222,11 @@ engine:
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-ray-fragment
           anchor: "bitnami-ray"
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'notebook'"
+          reference: bitnami-jupyter-fragment
+          anchor: "bitnami-jupyter"
