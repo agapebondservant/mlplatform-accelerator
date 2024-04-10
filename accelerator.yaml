@@ -173,7 +173,7 @@ accelerator:
             value: training
       exposeTypes:
         - name: "*"
-    - name: kubeflow-pipelines-fragment
+    - name: kubeflowpipelines-fragment
       expose:
         - name: "mlPlatformType"
           as: "kubeflowPipelinesMlPlatformType"
@@ -241,7 +241,7 @@ engine:
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
-          reference: kubeflow-pipelines-fragment
+          reference: kubeflowpipelines-fragment
           anchor: "kubeflowpipelines"
     - type: Chain
       transformations:
