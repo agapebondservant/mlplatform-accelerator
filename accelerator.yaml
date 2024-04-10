@@ -173,6 +173,19 @@ accelerator:
             value: training
       exposeTypes:
         - name: "*"
+    - name: kubeflowpipelines-fragment
+      expose:
+        - name: "mlPlatformType"
+          as: "kubeflowPipelinesMlPlatformType"
+          dependsOn:
+            name: mlPlatformType
+            value: hidden
+        - name: "*"
+          dependsOn:
+            name: mlPlatformType
+            value: training
+      exposeTypes:
+        - name: "*"
     - name: bitnami-jupyter-fragment
       expose:
         - name: "mlPlatformType"
@@ -222,6 +235,14 @@ engine:
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-ray-fragment
           anchor: "bitnami-ray"
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'training'"
+          reference: kubeflowpipelines-fragment
+          anchor: "kubeflowpipelines"
     - type: Chain
       transformations:
         - type: Include
