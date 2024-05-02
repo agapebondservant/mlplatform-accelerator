@@ -206,6 +206,8 @@ engine:
     - type: Chain
       transformations:
         - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
+        - type: Include
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
@@ -213,6 +215,8 @@ engine:
           anchor: "airflow"
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
         - type: Include
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
@@ -222,6 +226,8 @@ engine:
     - type: Chain
       transformations:
         - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
+        - type: Include
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
@@ -229,6 +235,8 @@ engine:
           anchor: "bitnami-mlflow"
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
         - type: Include
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
@@ -238,6 +246,8 @@ engine:
     - type: Chain
       transformations:
         - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
+        - type: Include
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
@@ -245,6 +255,8 @@ engine:
           anchor: "kubeflowpipelines"
     - type: Chain
       transformations:
+        - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
         - type: Include
           patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
