@@ -246,8 +246,23 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'gitops-sync.yaml', 'resources/**.yaml' ]
+          patterns: [ 'resources/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'notebook'"
           reference: bitnami-jupyter-fragment
           anchor: "bitnami-jupyter"
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'resources/**.yaml' ]
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'notebook'"
+          reference: bitnami-jupyter-fragment
+          anchor: "bitnami-jupyter"
+    - type: Chain
+      transformations:
+        - type: Include
+          patterns: [ 'gitops-sync.yaml' ]
+        - type: InvokeFragment
+          condition: "#mlPlatformType == 'notebook'"
+          reference: bitnami-jupyter-fragment
