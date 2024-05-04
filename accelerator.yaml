@@ -246,14 +246,6 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'resources/**.yaml' ]
-        - type: InvokeFragment
-          condition: "#mlPlatformType == 'notebook'"
-          reference: bitnami-jupyter-fragment
-          anchor: "bitnami-jupyter"
-    - type: Chain
-      transformations:
-        - type: Include
           patterns: [ '**/**.yaml' ]
         - type: Exclude
           patterns: ["accelerator.yaml"]
