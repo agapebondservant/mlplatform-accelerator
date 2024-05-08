@@ -206,7 +206,7 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'gitops-sync.yaml', 'resources/**.yaml' ]
+          patterns: [ '**/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
           reference: airflow-fragment
@@ -214,7 +214,7 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'gitops-sync.yaml', 'resources/**.yaml' ]
+          patterns: [ '**/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'datasource'"
           reference: postgres-fragment
@@ -222,7 +222,7 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'gitops-sync.yaml', 'resources/**.yaml' ]
+          patterns: [ '**/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-mlflow-fragment
@@ -230,7 +230,7 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'gitops-sync.yaml', 'resources/**.yaml' ]
+          patterns: [ '**/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-ray-fragment
@@ -238,7 +238,7 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ 'gitops-sync.yaml', 'resources/**.yaml' ]
+          patterns: [ '**/**.yaml' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: kubeflowpipelines-fragment
