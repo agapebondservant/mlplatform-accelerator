@@ -233,8 +233,6 @@ engine:
           reference: bitnami-ray-fragment
     - type: Chain
       transformations:
-        - type: Include
-          patterns: [ '**/**' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: kubeflowpipelines-fragment
