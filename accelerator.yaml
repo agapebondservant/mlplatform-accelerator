@@ -234,7 +234,7 @@ engine:
     - type: Chain
       transformations:
         - type: Include
-          patterns: [ '**/**.yaml' ]
+          patterns: [ '**/**' ]
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: kubeflowpipelines-fragment
