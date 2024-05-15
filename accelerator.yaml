@@ -210,7 +210,6 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
           reference: airflow-fragment
-          anchor: "airflow"
     - type: Chain
       transformations:
         - type: Include
@@ -218,7 +217,6 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'datasource'"
           reference: postgres-fragment
-          anchor: "postgres"
     - type: Chain
       transformations:
         - type: Include
@@ -226,7 +224,6 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-mlflow-fragment
-          anchor: "bitnami-mlflow"
     - type: Chain
       transformations:
         - type: Include
@@ -234,7 +231,6 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-ray-fragment
-          anchor: "bitnami-ray"
     - type: Chain
       transformations:
         - type: Include
@@ -242,7 +238,6 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: kubeflowpipelines-fragment
-          anchor: "kubeflowpipelines"
     - type: Chain
       transformations:
         - type: Include
