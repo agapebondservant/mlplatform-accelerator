@@ -258,4 +258,4 @@ engine:
         - type: UniquePath
           strategy: FavorOwn
     - type: UniquePath
-      strategy: UseLast
+      strategy: Append
