@@ -258,6 +258,6 @@ engine:
         - type: UniquePath
           strategy: FavorOwn
     - type: Chain
-        transformations:
-          - type: UniquePath
-            strategy: UseLast
+      transformations:
+        - type: UniquePath
+          strategy: UseLast
