@@ -249,3 +249,5 @@ engine:
       transformations:
         - type: Exclude
           patterns: [ 'catalog-info.yaml', '**/catalog-info.yaml' ]
+        - type: UniquePath
+          strategy: UseLast
