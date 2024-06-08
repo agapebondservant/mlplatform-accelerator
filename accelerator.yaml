@@ -248,6 +248,6 @@ engine:
     - type: Chain
       transformations:
         - type: Exclude
-          patterns: [ 'catalog-info.yaml' ]
+          patterns: [ '**/catalog-info.yaml' ]
         - type: UniquePath
           strategy: UseLast
