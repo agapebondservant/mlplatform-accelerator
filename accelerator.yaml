@@ -257,3 +257,5 @@ engine:
           reference: bitnami-jupyter-fragment
         - type: UniquePath
           strategy: FavorOwn
+    - type: UniquePath
+      strategy: UseLast
