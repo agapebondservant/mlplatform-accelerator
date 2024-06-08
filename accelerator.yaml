@@ -210,6 +210,8 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'dataprocess'"
           reference: airflow-fragment
+        - type: UniquePath
+          strategy: FavorOwn
     - type: Chain
       transformations:
         - type: Include
@@ -217,6 +219,8 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'datasource'"
           reference: postgres-fragment
+        - type: UniquePath
+          strategy: FavorOwn
     - type: Chain
       transformations:
         - type: Include
@@ -224,6 +228,8 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-mlflow-fragment
+        - type: UniquePath
+          strategy: FavorOwn
     - type: Chain
       transformations:
         - type: Include
@@ -231,6 +237,8 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: bitnami-ray-fragment
+        - type: UniquePath
+          strategy: FavorOwn
     - type: Chain
       transformations:
         - type: Include
@@ -238,6 +246,8 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'training'"
           reference: kubeflowpipelines-fragment
+        - type: UniquePath
+          strategy: FavorOwn
     - type: Chain
       transformations:
         - type: Include
@@ -245,3 +255,5 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'notebook'"
           reference: bitnami-jupyter-fragment
+        - type: UniquePath
+          strategy: FavorOwn
