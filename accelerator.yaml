@@ -243,3 +243,5 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'notebook'"
           reference: bitnami-jupyter-fragment
+    - type: UniquePath
+      strategy: UseLast
