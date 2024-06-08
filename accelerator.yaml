@@ -247,7 +247,5 @@ engine:
           reference: bitnami-jupyter-fragment
     - type: Chain
       transformations:
-        - type: Exclude
-          patterns: [ 'catalog-info.yaml', '**/catalog-info.yaml' ]
         - type: UniquePath
           strategy: UseLast
