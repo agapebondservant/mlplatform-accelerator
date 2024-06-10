@@ -249,7 +249,7 @@ engine:
       transformations:
         - type: Exclude
           patterns: ["catalog-info.yaml" , "README.md"]
-    - type: Chain
-      transformations:
-        - type: UniquePath
-          strategy: UseLast
+#    - type: Chain
+#      transformations:
+#        - type: UniquePath
+#          strategy: UseLast
