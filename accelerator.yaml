@@ -249,5 +249,8 @@ engine:
 #      transformations:
 #        - type: Exclude
 #          patterns: ["../catalog-info.yaml" , "catalog-info.yaml" , "README.md"]
-    - type: UniquePath
-      strategy: UseLast
+    - type: Chain
+      transformations:
+        - type: RewritePath
+          regex: 'catalog-info.yaml'
+          rewriteTo: "'catalog.yaml'"
