@@ -245,12 +245,3 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'notebook'"
           reference: bitnami-jupyter-fragment
-#    - type: Chain
-#      transformations:
-#        - type: Exclude
-#          patterns: ["../catalog-info.yaml" , "catalog-info.yaml" , "README.md"]
-    - type: Chain
-      transformations:
-        - type: RewritePath
-          regex: 'catalog-info.yaml'
-          rewriteTo: "'catalog.yaml'"
