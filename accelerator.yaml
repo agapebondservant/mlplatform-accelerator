@@ -248,7 +248,7 @@ engine:
     - type: Chain
       transformations:
         - type: Exclude
-          patterns: [ '**/catalog-info.yaml', 'catalog-info.yaml' , "README.md"]
+          patterns: ["catalog-info.yaml" , "README.md"]
     - type: Chain
       transformations:
         - type: UniquePath
