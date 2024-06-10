@@ -205,10 +205,6 @@ engine:
   sources:
     - type: Chain
       transformations:
-        - type: Exclude
-          patterns: [ '**/catalog-info.yaml', 'catalog-info.yaml' ]
-    - type: Chain
-      transformations:
         - type: Include
           patterns: [ '**/**.yaml' ]
         - type: InvokeFragment
@@ -249,6 +245,10 @@ engine:
         - type: InvokeFragment
           condition: "#mlPlatformType == 'notebook'"
           reference: bitnami-jupyter-fragment
+    - type: Chain
+      transformations:
+        - type: Exclude
+          patterns: [ '**/catalog-info.yaml', 'catalog-info.yaml' ]
     - type: Chain
       transformations:
         - type: UniquePath
