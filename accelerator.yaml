@@ -249,5 +249,5 @@ engine:
       transformations:
         - type: Exclude
           patterns: ["../catalog-info.yaml" , "catalog-info.yaml" , "README.md"]
-        - type: UniquePath
-          strategy: UseLast
+#        - type: UniquePath
+#          strategy: UseLast
